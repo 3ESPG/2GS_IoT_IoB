@@ -6,6 +6,7 @@ Regra da GS: *"IA como copiloto: registrar os prompts usados em prompts.md e sab
 |---|---|---|---|---|
 | 1 | Claude (Claude Code) | Pedimos ajuda para fazer a entrega de Physical Computing a partir do slide da disciplina, do documento da solução HeatSafe, das entrevistas (personas), da PROPOSTA.md e dos dados do INMET. | Primeira versão do firmware (`wokwi/sketch.ino`), do circuito (`diagram.json`), do README e do roteiro do vídeo. | Conferimos os níveis e tempos com a tabela do grupo, os contratos `POST /leituras` e `POST /eventos` com quem faz a API e testamos cada cenário no Wokwi. |
 | 2 | Claude (Claude Code) | Pedimos para montar o projeto no Wokwi e testar. | No teste, o ESP32 reiniciava no primeiro envio HTTPS (watchdog do núcleo 0). A correção foi rodar a tarefa de rede com prioridade 0. Também vimos que o HTTPS não completa no simulador, então a URL da demo passou a ser `http://`. | Rodamos de novo no Wokwi e conferimos que ele não reinicia mais e que `POST /leituras` volta HTTP 200. |
+| 3 | Claude (Claude Code) + ElevenLabs | Pedimos um vídeo de até 4 min com a demonstração completa e narração em português. | Gravação automática do Wokwi seguindo o `ROTEIRO_VIDEO.md`, com legendas, display ampliado e narração gerada na ElevenLabs (voz "Brian", modelo multilíngue). | Escolhemos a voz ouvindo amostras e conferimos o vídeo inteiro antes de entregar. |
 
 ## Como explicar as partes principais
 

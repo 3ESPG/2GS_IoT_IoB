@@ -233,7 +233,7 @@ Physical Computing IoT e IOB/
 ├── integrantes.txt      ← nomes do grupo (entregável)
 ├── ROTEIRO_VIDEO.md     ← roteiro do vídeo de 4 min
 ├── prompts.md           ← registro do uso de IA (regra da GS)
-├── HeatSafe_video_demo.mp4 ← vídeo da demonstração (3min56, com narração)
+├── HeatSafe_video_demo.mp4 ← vídeo da demonstração (3min46, narrado)
 ├── docs/circuito.png    ← print do circuito no Wokwi
 ├── wokwi/
 │   ├── sketch.ino       ← firmware do ESP32
