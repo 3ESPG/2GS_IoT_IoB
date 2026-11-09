@@ -1,0 +1,11 @@
+HeatSafe - GS CitizenTech 2026.2
+Physical Computing: IoT & IoB - Engenharia de Software 3o ano Fev - FIAP
+
+Integrantes:
+- Felipe Braunstein e Silva - RM554483
+- Felipe do Nascimento Fernandes - RM554598
+- Henrique Ignacio Bartalo - RM555274
+- Gustavo Henrique Martins - RM556956
+
+Projeto no Wokwi: https://wokwi.com/projects/480247942666198017
+Video demonstrativo: COLE AQUI O LINK

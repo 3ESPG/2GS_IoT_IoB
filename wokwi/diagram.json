@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "author": "Equipe HeatSafe · GS CitizenTech FIAP 2026.2",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -86.4,
+      "left": -192,
+      "attrs": {
+        "temperature": "24",
+        "humidity": "50"
+      }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": 52,
+      "left": -280,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn",
+      "top": 182,
+      "left": -192,
+      "attrs": {
+        "color": "blue",
+        "key": " ",
+        "bounce": "0",
+        "label": "Bebi agua / Estou bem"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw",
+      "top": 268,
+      "left": -172.8,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -112.06,
+      "left": 172.3,
+      "attrs": {
+        "i2cAddress": "0x3c"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 129.6,
+      "left": 163.2,
+      "rotate": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 158.4,
+      "left": 163.2,
+      "rotate": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 187.2,
+      "left": 163.2,
+      "rotate": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb",
+      "top": 90,
+      "left": 268,
+      "attrs": {
+        "common": "cathode"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz",
+      "top": 220,
+      "left": 249.6,
+      "attrs": {
+        "volume": "0.2"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "dht:VCC", "red", [] ],
+    [ "dht:VCC", "pir:VCC", "red", [] ],
+    [ "esp:GND.1", "dht:GND", "black", [] ],
+    [ "dht:GND", "pir:GND", "black", [] ],
+    [ "esp:32", "dht:SDA", "green", [] ],
+    [ "esp:33", "pir:OUT", "orange", [] ],
+    [ "esp:26", "btn:1.r", "blue", [] ],
+    [ "btn:2.l", "esp:GND.1", "black", [] ],
+    [ "esp:25", "sw:2", "violet", [] ],
+    [ "sw:1", "esp:3V3", "red", [] ],
+    [ "sw:3", "esp:GND.1", "black", [] ],
+    [ "esp:21", "oled:SDA", "green", [] ],
+    [ "esp:22", "oled:SCL", "gold", [] ],
+    [ "esp:3V3", "oled:VCC", "red", [] ],
+    [ "esp:GND.2", "oled:GND", "black", [] ],
+    [ "esp:18", "r1:1", "red", [] ],
+    [ "esp:17", "r2:1", "green", [] ],
+    [ "esp:16", "r3:1", "blue", [] ],
+    [ "r1:2", "rgb:R", "red", [] ],
+    [ "r2:2", "rgb:G", "green", [] ],
+    [ "r3:2", "rgb:B", "blue", [] ],
+    [ "rgb:COM", "esp:GND.2", "black", [] ],
+    [ "esp:19", "bz:2", "orange", [] ],
+    [ "bz:1", "rgb:COM", "black", [] ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  },
+  "dependencies": {}
+}
