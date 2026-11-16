@@ -38,6 +38,19 @@
 | Henrique Ignacio Bartalo | RM555274 |
 | Gustavo Henrique Martins | RM556956 |
 
+## 🧾 Ficha da CitizenTech
+
+| Campo | Resposta |
+|---|---|
+| **Nome** | HeatSafe |
+| **Cidade e bairro** | São Paulo, Itaim Paulista (zona leste): casas térreas com telha de fibrocimento |
+| **Cidadão beneficiado** | Idosos que moram ou passam o dia sozinhos em casas quentes; familiares e agentes comunitários de saúde da UBS |
+| **Problema, em uma frase** | Nos dias de calor extremo, idosos que passam o dia sozinhos em casas quentes podem passar mal sem perceber o risco, e ninguém fica sabendo a tempo. |
+| **Como funciona** | Um dispositivo com ESP32 dentro da casa mede o índice de calor e detecta movimento; o idoso registra a água que bebe com um botão. Se a casa está perigosa e não há movimento ou hidratação, a família é avisada; sem resposta em 20 minutos, o caso vai para a lista de visitas da UBS. |
+| **O que esta parte faz** | É o aparelho dentro da casa: mede, alerta localmente (LED, buzzer, display) e envia leituras e eventos para a API |
+| **Indicador de impacto** | Tempo entre o risco detectado e a resposta da família/UBS · % de lembretes de água atendidos · alarmes sem resposta por semana |
+| **ODS conectados** | **3** (Saúde e bem-estar, meta 3.d: alerta precoce de riscos à saúde) · **13** (Ação contra a mudança do clima, meta 13.1: adaptação a ondas de calor) · **11** (Cidades e comunidades sustentáveis) · **10** (Redução das desigualdades) |
+
 ## 📑 Sumário
 
 1. [O problema](#-o-problema)
@@ -89,7 +102,7 @@ flowchart LR
     end
     D -- "POST /leituras (a cada minuto)<br/>POST /eventos (água, movimento,<br/>alarme sem resposta)" --> API["API central C#<br/>regras · alertas · escalonamento"]
     API -- "resposta: modoVigilancia" --> D
-    API <-- "GET /previsao/amanha" --> ML["Serviço de previsão (Python)<br/>modelo de ML com dados do INMET"]
+    API <-- "GET /previsao/amanha" --> ML["Serviço de previsão (Java/Spring Boot)<br/>modelo de ML com dados do INMET"]
     API --> APP["App Expo<br/>modo idoso · família · agente UBS"]
     APP --> ANA["Ana (filha)<br/>recebe o alerta"]
     APP --> ROSA["Rosa (UBS)<br/>lista de visitas"]
